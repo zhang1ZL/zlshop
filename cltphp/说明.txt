@@ -1,0 +1,11 @@
+1.后台登录名：admin  密码：admin123
+
+2.CLTPHP不支持二级目录访问
+
+3.PHP版本要求>=5.6
+
+4.官方网站：http://www.cltphp.com
+
+5.测试网站：http://demo.cltphp.com   后台登录名：admin  密码：admin123
+
+6.操作文档（开发中）地址：https://www.kancloud.cn/chichu/cltphp/255245

@@ -1,0 +1,220 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>商品发布</legend>
+    </fieldset>
+<form class="layui-form layui-form-pane" action="">
+	<div class="layui-form-item">
+		<label class="layui-form-label">商品名</label>
+		<div class="layui-input-inline">
+			<input type="text" name="gname" lay-verify="required" placeholder="请输入商品名" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">商品标题</label>
+		<div class="layui-input-block">
+			<input type="text" name="gtitle" autocomplete="off" placeholder="请输入商品标题" class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item layui-form-text">
+		<label class="layui-form-label">商品简介</label>
+		<div class="layui-input-block">
+			<textarea placeholder="请输入商品简介..." class="layui-textarea" name="ginfo"></textarea>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">选择分类</label>
+		<div class="layui-input-inline">
+			<select name="class1">
+				<option value="">请选择一级分类</option>
+				<option value="浙江">浙江省</option>
+				<option value="你的工号">江西省</option>
+				<option value="你最喜欢的老师">福建省</option>
+			</select>
+		</div>
+		<div class="layui-input-inline">
+			<select name="class2">
+				<option value="">请选择二级分类</option>
+				<option value="杭州">杭州</option>
+				<option value="宁波" disabled="">宁波</option>
+				<option value="温州">温州</option>
+				<option value="温州">台州</option>
+				<option value="温州">绍兴</option>
+			</select>
+		</div>
+		<div class="layui-input-inline">
+			<select name="class3">
+				<option value="">请选择三级分类</option>
+				<option value="西湖区">西湖区</option>
+				<option value="余杭区">余杭区</option>
+				<option value="拱墅区">临安市</option>
+			</select>
+		</div>
+		<div class="layui-form-mid layui-word-aux"></div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label">选择类型</label>
+			<div class="layui-input-block">
+				<select name="gclass" lay-filter="gclass">
+					<option value=""></option>
+					<option value="0">商品图</option>
+					<option value="1">轮播图</option>
+					<option value="2">广告图</option>
+					<option value="3">头部图</option>
+					<option value="4">底部图</option>
+					<option value="5">其他</option>
+				</select>
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label" style="width: 80px;">属性</label>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="number" name="attr" autocomplete="off" class="layui-input" placeholder="请输入属性">
+			</div>
+			<label class="layui-form-label" style="width: 80px;">规格</label>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="number" name="spec" autocomplete="off" class="layui-input" placeholder="请输入规格">
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label">原价</label>
+			<div class="layui-input-inline" style="width: 150px;">
+				<input type="number" name="price_cost" autocomplete="off" class="layui-input" placeholder="请输入“原价”">
+			</div>
+			<label class="layui-form-label">单价</label>
+			<div class="layui-input-inline" style="width: 150px;">
+				<input type="number" name="price" autocomplete="off" class="layui-input" placeholder="请输入“单价”">
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label">检索套餐</label>
+			<div class="layui-input-inline" style="width: 150px;">
+				<input type="number" name="price_cost" autocomplete="off" class="layui-input" placeholder="请输入套餐“ID”">
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">图片类型</label>
+		<div class="layui-input-inline">
+			<select name="pic" lay-filter="img">
+				<option value=""></option>
+				<option value="0">商品图</option>
+				<option value="1">轮播图</option>
+				<option value="2">广告图</option>
+				<option value="3">头部图</option>
+				<option value="4">底部图</option>
+				<option value="5">其他</option>
+			</select>
+		</div>		
+        <div class="layui-input-inline">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-primary" id="cateBtn"><i class="icon icon-upload"></i>点击上传</button>
+            </div>
+        </div>
+	</div>
+    <div class="layui-form-item">
+        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;"> 图片预览：
+		    <div class="layui-upload-list" id="demoImg">
+		    </div>
+		    <p id="demoText"></p>
+		 </blockquote>
+	 </div>
+	<div class="layui-form-item" pane="">
+		<label class="layui-form-label">是否上架</label>
+		<div class="layui-input-block">
+			<input type="checkbox" checked="" name="state" lay-skin="switch" lay-filter="switchTest" title="是|否" lay-text='是|否'>
+		</div>
+	</div>
+	<div class="layui-form-item" pane="">
+		<label class="layui-form-label">单选框</label>
+		<div class="layui-input-block">
+			<input type="radio" name="sex" value="男" title="男" checked="">
+			<input type="radio" name="sex" value="女" title="女">
+		</div>
+	</div>
+	<script id="editor" type="text/plain" name="detail" style="width:100%;height:500px;"></script>
+	<div class="layui-form-item">
+		<button class="layui-btn" lay-submit="" lay-filter="demo">提交</button>
+		<a class="layui-btn layui-btn-primary" href="{:url('goodsList')}">返回</a>
+	</div>	
+</form>
+</div>
+{include file="common/foot"/}
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script>
+	var ue = UE.getEditor('editor');
+	layui.use(['form', 'layedit', 'laydate','upload'], function() {
+		var form = layui.form,
+			layer = layui.layer,
+			layedit = layui.layedit,
+			upload = layui.upload,
+			laydate = layui.laydate;
+
+		//日期
+		laydate.render({
+			elem: '#date'
+		});
+		laydate.render({
+			elem: '#date1'
+		});
+		//自定义验证规则
+		form.verify({
+			title: function(value) {
+				if(value.length < 5) {
+					return '标题至少得5个字符啊';
+				}
+			},
+			pass: [/(.+){6,12}$/, '密码必须6到12位'],
+			content: function(value) {
+				layedit.sync(editIndex);
+			}
+		});
+
+		//监听指定开关
+		form.on('switch(switchTest)', function(data) {
+			layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+				offset: '6px'
+			});
+			layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+		});
+
+		//监听提交
+		form.on('submit(demo)', function(data) {
+			layer.alert(JSON.stringify(data.field), {
+				title: '最终的提交信息'
+			})
+			return false;
+		});
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#cateBtn',
+            url: '{:url("UpFiles/upload")}',
+            multiple: true,
+            done: function(res){
+                if(res.code>0){
+                	var pics = "<input type='hidden' name='image[]' value='"+res.url+"'/>";
+			    	var img = '<img style="width:100px;height: 100px; margin-left: 1rem;" src="__PUBLIC__'+res.url+'" class="layui-upload-img">';
+			    	$('#demoImg').append("<div class='img'>"+img+pics+"<span id='delimg'>移除</span></div>");
+                }else{
+                    //如果上传失败
+                    return layer.msg('上传失败');
+                }
+            },
+            error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+	});
+</script>
